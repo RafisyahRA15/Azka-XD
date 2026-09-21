@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Media Digital & Multimedia — Rafisyah Azka</title>
+    <meta name="description" content="Website presentasi Media Digital dan Multimedia karya Rafisyah Azka dari kelas 1-TIA.">
+    <meta name="author" content="Rafisyah Azka">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f7;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            font-weight: 400;
+            color: #777;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #555;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            background:
+                radial-gradient(circle at 20% 20%, #e5e5e5, transparent 30%),
+                radial-gradient(circle at 80% 80%, #dddddd, transparent 30%),
+                #fafafa;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            background: white;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #666;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .btn-dark {
+            background: #111;
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .btn-light {
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .btn-light:hover {
+            background: #eee;
+        }
+
+        /* GENERAL */
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .section-label {
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .section-desc {
+            color: #666;
+            max-width: 650px;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            margin-top: 45px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* PRESENTATION */
+        .presentation {
+            background: #111;
+            color: white;
+        }
+
+        .presentation .section-desc {
+            color: #aaa;
+        }
+
+        .ppt-box {
+            margin-top: 45px;
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 22px;
+            padding: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .ppt-info h3 {
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .ppt-info p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .ppt-button {
+            background: white;
+            color: #111;
+            padding: 14px 23px;
+            border-radius: 10px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .ppt-button:hover {
+            background: #ddd;
+        }
+
+        /* TOPICS */
+        .topics {
+            margin-top: 45px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .topic {
+            padding: 25px;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 16px;
+        }
+
+        .number {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        .topic h3 {
+            margin-bottom: 8px;
+        }
+
+        .topic p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* PROFILE */
+        .profile {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 45px;
+        }
+
+        .profile-image {
+            aspect-ratio: 1;
+            border-radius: 25px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: 800;
+            color: #555;
+        }
+
+        .profile h3 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .profile p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .info-item {
+            padding: 12px 15px;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .info-item strong {
+            display: inline-block;
+            min-width: 90px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .about-grid,
+            .topics,
+            .profile {
+                grid-template-columns: 1fr;
+            }
+
+            .ppt-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .ppt-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            section {
+                padding: 75px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                AZKA<span>.PRESENTATION</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#materi">Materi</a></li>
+                <li><a href="#profile">Profil</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <div class="badge">
+                ✦ Digital Presentation
+            </div>
+
+            <h1>
+                Media Digital<br>
+                <span>& Multimedia</span>
+            </h1>
+
+            <p>
+                Website pendamping presentasi yang berisi materi,
+                informasi, dan file PowerPoint mengenai Media Digital dan Multimedia.
+            </p>
+
+            <div class="buttons">
+                <a href="#materi" class="btn btn-dark">
+                    Jelajahi Materi →
+                </a>
+
+                <a href="presentasi.pptx" class="btn btn-light" download>
+                    Download PPT
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+
+            <div class="section-label">01 — Tentang</div>
+
+            <h2 class="section-title">
+                Mengenal Media Digital
+            </h2>
+
+            <p class="section-desc">
+                Media digital merupakan media yang menggunakan teknologi digital
+                untuk membuat, menyimpan, mengolah, menyampaikan, dan menyebarkan
+                informasi kepada pengguna.
+            </p>
+
+            <div class="about-grid">
+
+                <div class="card">
+                    <h3>Digital</h3>
+                    <p>
+                        Informasi yang disajikan dalam bentuk digital sehingga
+                        dapat diakses dan diproses menggunakan perangkat elektronik.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Multimedia</h3>
+                    <p>
+                        Penggabungan berbagai elemen seperti teks, gambar,
+                        audio, video, animasi, dan interaktivitas.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Kreativitas</h3>
+                    <p>
+                        Teknologi multimedia membuka ruang untuk menyampaikan
+                        ide melalui berbagai bentuk visual dan interaktif.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Teknologi</h3>
+                    <p>
+                        Perkembangan teknologi membuat proses pembuatan dan
+                        penyebaran konten digital semakin mudah dan cepat.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENTATION -->
+    <section class="presentation">
+        <div class="container">
+
+            <div class="section-label">02 — Presentation</div>
+
+            <h2 class="section-title">
+                File Presentasi
+            </h2>
+
+            <p class="section-desc">
+                Kamu dapat melihat atau mengunduh materi presentasi
+                yang digunakan dalam pembelajaran.
+            </p>
+
+            <div class="ppt-box">
+
+                <div class="ppt-info">
+                    <h3>Media Digital & Multimedia</h3>
+
+                    <p>
+                        PowerPoint Presentation • Rafisyah Azka • 1-TIA
+                    </p>
+                </div>
+
+                <a
+                    href="presentasi.pptx"
+                    class="ppt-button"
+                    download>
+                    ↓ Download PPT
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TOPICS -->
+    <section id="materi">
+        <div class="container">
+
+            <div class="section-label">03 — Materi</div>
+
+            <h2 class="section-title">
+                Isi Pembahasan
+            </h2>
+
+            <p class="section-desc">
+                Beberapa topik utama yang dibahas dalam presentasi.
+            </p>
+
+            <div class="topics">
+
+                <div class="topic">
+                    <div class="number">01</div>
+                    <h3>Pengertian</h3>
+                    <p>
+                        Memahami konsep dasar media digital dan multimedia.
+                    </p>
+                </div>
+
+                <div class="topic">
+                    <div class="number">02</div>
+                    <h3>Elemen Multimedia</h3>
+                    <p>
+                        Mengenal teks, gambar, audio, video, animasi,
+                        dan elemen interaktif.
+                    </p>
+                </div>
+
+                <div class="topic">
+                    <div class="number">03</div>
+                    <h3>Penerapan</h3>
+                    <p>
+                        Contoh penggunaan multimedia dalam kehidupan
+                        sehari-hari dan dunia digital.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile">
+        <div class="container">
+
+            <div class="section-label">04 — Creator</div>
+
+            <h2 class="section-title">
+                Tentang Pembuat
+            </h2>
+
+            <div class="profile">
+
+                <div class="profile-image">
+                    RA
+                </div>
+
+                <div>
+
+                    <h3>Rafisyah Azka</h3>
+
+                    <p>
+                        Mahasiswa yang sedang mempelajari dunia teknologi,
+                        multimedia, dan pengembangan konten digital.
+                    </p>
+
+                    <div class="info-list">
+
+                        <div class="info-item">
+                            <strong>Nama</strong>
+                            Rafisyah Azka
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Kelas</strong>
+                            1-TIA
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Bidang</strong>
+                            Multimedia & Digital
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Rafisyah Azka. All rights reserved.
+        </p>
+
+        <p style="margin-top: 8px;">
+            Media Digital & Multimedia Presentation
+        </p>
+    </footer>
+
+</body>
+</html>
