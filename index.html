@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="google6c57182fcd426758.html">
-    <title>Media Digital & Multimedia — Rafisyah Azka</title>
-    <meta name="description" content="Website presentasi Media Digital dan Multimedia karya Rafisyah Azka dari kelas 1-TIA.">
+
+    <title>Tutorial Kabel LAN Cross — Rafisyah Azka</title>
+    <meta name="description" content="Website tutorial merangkai kabel LAN tipe Cross dan menghubungkan dua laptop menggunakan kabel LAN karya Rafisyah Azka.">
     <meta name="author" content="Rafisyah Azka">
 
     <style>
@@ -28,7 +28,6 @@
             color: inherit;
         }
 
-        /* NAVBAR */
         nav {
             position: fixed;
             top: 0;
@@ -74,7 +73,6 @@
             color: #000;
         }
 
-        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -103,7 +101,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(42px, 8vw, 78px);
+            font-size: clamp(40px, 8vw, 76px);
             line-height: 1.05;
             letter-spacing: -3px;
             margin-bottom: 25px;
@@ -114,7 +112,7 @@
         }
 
         .hero p {
-            max-width: 650px;
+            max-width: 700px;
             margin: auto;
             color: #666;
             font-size: 17px;
@@ -155,7 +153,6 @@
             background: #eee;
         }
 
-        /* GENERAL */
         section {
             padding: 100px 20px;
         }
@@ -182,10 +179,9 @@
 
         .section-desc {
             color: #666;
-            max-width: 650px;
+            max-width: 700px;
         }
 
-        /* ABOUT */
         .about-grid {
             margin-top: 45px;
             display: grid;
@@ -216,7 +212,6 @@
             font-size: 14px;
         }
 
-        /* PRESENTATION */
         .presentation {
             background: #111;
             color: white;
@@ -246,6 +241,13 @@
         .ppt-info p {
             color: #aaa;
             font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .ppt-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .ppt-button {
@@ -255,13 +257,31 @@
             border-radius: 10px;
             font-weight: bold;
             white-space: nowrap;
+            transition: 0.2s;
         }
 
         .ppt-button:hover {
             background: #ddd;
+            transform: translateY(-2px);
         }
 
-        /* TOPICS */
+        .ppt-viewer {
+            margin-top: 30px;
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 22px;
+            padding: 15px;
+            overflow: hidden;
+        }
+
+        .ppt-viewer iframe {
+            width: 100%;
+            height: 650px;
+            border: 0;
+            border-radius: 14px;
+            background: white;
+        }
+
         .topics {
             margin-top: 45px;
             display: grid;
@@ -274,6 +294,11 @@
             background: white;
             border: 1px solid #e5e5e5;
             border-radius: 16px;
+            transition: 0.2s;
+        }
+
+        .topic:hover {
+            transform: translateY(-4px);
         }
 
         .number {
@@ -291,7 +316,6 @@
             font-size: 14px;
         }
 
-        /* PROFILE */
         .profile {
             display: grid;
             grid-template-columns: 0.7fr 1.3fr;
@@ -337,10 +361,9 @@
 
         .info-item strong {
             display: inline-block;
-            min-width: 90px;
+            min-width: 120px;
         }
 
-        /* FOOTER */
         footer {
             background: #111;
             color: white;
@@ -353,7 +376,6 @@
             font-size: 13px;
         }
 
-        /* MOBILE */
         @media (max-width: 700px) {
             .nav-links {
                 display: none;
@@ -378,9 +400,22 @@
                 align-items: flex-start;
             }
 
+            .ppt-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+
             .ppt-button {
                 width: 100%;
                 text-align: center;
+            }
+
+            .ppt-viewer {
+                padding: 8px;
+            }
+
+            .ppt-viewer iframe {
+                height: 500px;
             }
 
             section {
@@ -403,6 +438,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#materi">Materi</a></li>
+                <li><a href="#presentasi">PPT</a></li>
                 <li><a href="#profile">Profil</a></li>
             </ul>
         </div>
@@ -413,17 +449,17 @@
         <div class="hero-content">
 
             <div class="badge">
-                ✦ Digital Presentation
+                ✦ Tutorial Jaringan Komputer
             </div>
 
             <h1>
-                Media Digital<br>
-                <span>& Multimedia</span>
+                Kabel LAN<br>
+                <span>Tipe Cross</span>
             </h1>
 
             <p>
-                Website pendamping presentasi yang berisi materi,
-                informasi, dan file PowerPoint mengenai Media Digital dan Multimedia.
+                Website pendamping presentasi mengenai cara merangkai kabel LAN
+                tipe Cross dan menghubungkan dua laptop menggunakan kabel LAN.
             </p>
 
             <div class="buttons">
@@ -431,8 +467,8 @@
                     Jelajahi Materi →
                 </a>
 
-                <a href="presentasi.pptx" class="btn btn-light" download>
-                    Download PPT
+                <a href="#presentasi" class="btn btn-light">
+                    👁 Lihat PPT
                 </a>
             </div>
 
@@ -442,6 +478,266 @@
     <!-- ABOUT -->
     <section id="about">
         <div class="container">
+
+            <div class="section-label">01 — Tentang</div>
+
+            <h2 class="section-title">
+                Mengenal Kabel LAN Cross
+            </h2>
+
+            <p class="section-desc">
+                Kabel LAN Cross digunakan untuk menghubungkan dua perangkat
+                sejenis secara langsung, seperti dua laptop atau dua komputer,
+                tanpa menggunakan perangkat jaringan seperti switch.
+            </p>
+
+            <div class="about-grid">
+
+                <div class="card">
+                    <h3>🔌 Kabel LAN</h3>
+                    <p>
+                        Kabel jaringan yang digunakan untuk menghubungkan
+                        perangkat dalam jaringan komputer.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🔀 Tipe Cross</h3>
+                    <p>
+                        Kabel dengan susunan warna berbeda pada kedua ujung
+                        konektor RJ45 untuk menghubungkan perangkat sejenis.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>💻 Dua Laptop</h3>
+                    <p>
+                        Dua laptop dapat dihubungkan secara langsung menggunakan
+                        kabel LAN Cross untuk melakukan komunikasi data.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌐 Konfigurasi IP</h3>
+                    <p>
+                        Setelah kabel terhubung, kedua laptop perlu diberikan
+                        alamat IP yang sesuai agar dapat saling berkomunikasi.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENTATION -->
+    <section class="presentation" id="presentasi">
+        <div class="container">
+
+            <div class="section-label">02 — Presentation</div>
+
+            <h2 class="section-title">
+                Materi Presentasi
+            </h2>
+
+            <p class="section-desc">
+                Lihat langsung file PowerPoint atau download file presentasi
+                untuk mempelajari langkah-langkah merangkai kabel LAN Cross
+                dan menghubungkan dua laptop.
+            </p>
+
+            <div class="ppt-box">
+
+                <div class="ppt-info">
+                    <h3>Tutorial Kabel LAN Cross</h3>
+
+                    <p>
+                        PowerPoint Presentation • Rafisyah Azka • 1-TIA
+                    </p>
+
+                    <p>
+                        Dosen Pengajar: Dr. Ali Firdaus, S.Kom., M.Kom.
+                    </p>
+                </div>
+
+                <div class="ppt-buttons">
+
+                    <a
+                        href="#viewer"
+                        class="ppt-button">
+                        👁 Lihat File PPT
+                    </a>
+
+                    <a
+                        href="presentasi.pptx"
+                        class="ppt-button"
+                        download>
+                        ↓ Download PPT
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="ppt-viewer" id="viewer">
+
+                <iframe
+                    src="https://view.officeapps.live.com/op/embed.aspx?src=https://azka-xd.vercel.app/presentasi.pptx"
+                    title="PowerPoint Tutorial Kabel LAN Cross">
+                </iframe>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TOPICS -->
+    <section id="materi">
+        <div class="container">
+
+            <div class="section-label">03 — Materi</div>
+
+            <h2 class="section-title">
+                Isi Pembahasan
+            </h2>
+
+            <p class="section-desc">
+                Beberapa langkah utama yang dibahas dalam tutorial pembuatan
+                kabel LAN Cross dan koneksi dua laptop.
+            </p>
+
+            <div class="topics">
+
+                <div class="topic">
+                    <div class="number">01</div>
+                    <h3>Alat & Bahan</h3>
+                    <p>
+                        Mengenal kabel UTP, konektor RJ45, tang crimping,
+                        LAN tester, dan peralatan yang diperlukan.
+                    </p>
+                </div>
+
+                <div class="topic">
+                    <div class="number">02</div>
+                    <h3>Susunan Kabel</h3>
+                    <p>
+                        Mengetahui urutan warna kabel yang digunakan
+                        untuk membuat kabel LAN tipe Cross.
+                    </p>
+                </div>
+
+                <div class="topic">
+                    <div class="number">03</div>
+                    <h3>Crimping RJ45</h3>
+                    <p>
+                        Menyusun kabel sesuai urutan warna kemudian
+                        memasangnya ke konektor RJ45 menggunakan tang crimping.
+                    </p>
+                </div>
+
+                <div class="topic">
+                    <div class="number">04</div>
+                    <h3>Pengujian Kabel</h3>
+                    <p>
+                        Menguji kabel LAN yang telah dibuat menggunakan
+                        LAN tester untuk memastikan susunan kabel benar.
+                    </p>
+                </div>
+
+                <div class="topic">
+                    <div class="number">05</div>
+                    <h3>Menghubungkan Laptop</h3>
+                    <p>
+                        Menghubungkan dua laptop secara langsung menggunakan
+                        kabel LAN Cross.
+                    </p>
+                </div>
+
+                <div class="topic">
+                    <div class="number">06</div>
+                    <h3>Konfigurasi IP</h3>
+                    <p>
+                        Mengatur IP Address pada kedua laptop agar dapat
+                        saling terhubung dan melakukan komunikasi jaringan.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile">
+        <div class="container">
+
+            <div class="section-label">04 — Creator</div>
+
+            <h2 class="section-title">
+                Tentang Pembuat
+            </h2>
+
+            <div class="profile">
+
+                <div class="profile-image">
+                    RA
+                </div>
+
+                <div>
+
+                    <h3>Rafisyah Azka</h3>
+
+                    <p>
+                        Mahasiswa yang sedang mempelajari jaringan komputer,
+                        teknologi, multimedia, dan pengembangan keterampilan
+                        digital melalui pembelajaran praktik.
+                    </p>
+
+                    <div class="info-list">
+
+                        <div class="info-item">
+                            <strong>Nama</strong>
+                            Rafisyah Azka
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Kelas</strong>
+                            1-TIA
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Materi</strong>
+                            Kabel LAN Cross
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Dosen</strong>
+                            Dr. Ali Firdaus, S.Kom., M.Kom.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Rafisyah Azka. All rights reserved.
+        </p>
+
+        <p style="margin-top: 8px;">
+            Tutorial Kabel LAN Cross & Koneksi Dua Laptop
+        </p>
+
+    </footer>
+
+</body>
+</html>ss="container">
 
             <div class="section-label">01 — Tentang</div>
 
